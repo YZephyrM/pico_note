@@ -1,0 +1,67 @@
+gobuster -u [url] -w wordlist.txt dir
+
+-u is used to state the website we're scanning.
+-w takes a list of words to iterate through to find hidden pages
+
+python3 -m http.server 12000 
+# Open a server on port 12000
+
+nc -lvn 127.0.0.1 12000 # Apache in ascolto solo in looppback
+-l: modalita' ascolto
+-v: verbose (vedi connessioni in tempo reale)
+-n: Disabilita la risoluzione DNS (piu' veloce)
+
+Netcat e' un tool per connessioni raw TCP/UDP, mentre i browser parlano HTTP/HTTPS
+quindi il browser aspetta risposte formattate in HTTP
+Il browser invia una richiesta HTTP
+
+
+HTTP/1.1 200 OK #Simulare una risposta manualmente
+Content-Type: text/html
+
+<h1> testo</h1>
+
+nslookup domain     #check up IP
+host domain         #other method
+
+# Se si vuole solo l’elenco dei record NS
+dig –t NS polimi.it +noall +answer
+
+# Se si vuole solo l’elenco dei record MX
+dig –t MX polimi.it +noall +answer
+
+# Se si vuole l’elenco di tutti i record disponibili
+dig –t ANY polimi.it +noall +answer
+
+# dig consente anche di analizzare la sequenza di richieste DNS per ogni query
+dig –t A polimi.it +noall +answer +trace
+
+# only IP
+dig +short domain
+
+# verify ICMP responce (-c do it for 'value' times)
+ping domain -c value
+
+# Verify if a web server responces
+curl -I https://IP_address
+
+# scan ports without ping
+nmap -Pn -p 80,443 IP_address
+
+# Trace route to the IP
+traceroute address_IP
+
+# solo ping 
+nmap -sn IP_address
+
+#scan molto aggressivo e rumoroso (service detection)
+nmap -sV IP_address
+
+# fast scan of most common ports
+nmap -F IP_address
+
+# aggressive timing
+nmap -T4 IP_address
+
+# verbose mode
+nmap -sn -vv ip_address
