@@ -79,10 +79,12 @@ Digital Forensics is the field in cybersecurity that tries to gather and underst
 ## Sleuthkit tools
 
 $ gzip -d [filename]      //unzip .gz file
+
 $ gunzip [filename]
+
 $ mmls [disk]             //size partions
 
-http://wiki.sleuthkit.org/index.php?title=TSK_Tool_Overview //Sleuthkit docs
+[Sleuthkit docs](http://wiki.sleuthkit.org/index.php?title=TSK_Tool_Overview )
 
 # Disk, disk, sleuth! II
 
