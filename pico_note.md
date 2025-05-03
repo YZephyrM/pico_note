@@ -90,3 +90,5 @@ $ mmls [disk]             //size partions
 
 [Sleuthkit docs](http://wiki.sleuthkit.org/index.php?title=TSK_Tool_Overview )
 
+
+[Interesting-ex-combination-bash-comm-sleuthkit](./Ex_interesting/DDS2.md)
