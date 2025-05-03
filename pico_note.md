@@ -6,9 +6,11 @@
 - $ = separator, separate computer generated prompt and user-written command
 
 ## common command:
-- $ date
-- $ cat [path] --> cat display all text in a file
-- $ apt install [package name] --> install app
+```
+$ date
+$ cat [path] --> cat display all text in a file
+$ apt install [package name] --> install app
+```
 
 **key "TAB" saves time --> auto-complet**
 
@@ -16,13 +18,14 @@
 https://explainshell.com/explain?cmd=mv
 
 ## other commands:
-- $ wget [URL]      //download files
-- $ file [filename]     //file type 
-- $ man [command]       //command instruction
-- $ grap        // tutorial in https://ryanstutorials.net/linuxtutorial/grep.php
-- $ find        // tutorial online
-- $ gzip -d     // unzip .gz file
-
+```
+$ wget [URL]      //download files
+$ file [filename]     //file type 
+$ man [command]       //command instruction
+$ grap        // tutorial in https://ryanstutorials.net/linuxtutorial/grep.php
+$ find        // tutorial online
+$ gzip -d     // unzip .gz file
+```
 # Forensics
 Digital Forensics is the field in cybersecurity that tries to gather and understand evidence after an incident, which can be crime, to determine ho it happend. They focus on gathering evidence prenst in computer devices that hold info electronically.
 
@@ -30,7 +33,7 @@ Digital Forensics is the field in cybersecurity that tries to gather and underst
 
 ## Key diff
 
-1. Single File vs. Multiple Files
+1. **Single File vs. Multiple Files**
 - .gz:
 
     - Compresses only one file (e.g., file.txt → file.txt.gz).
@@ -41,17 +44,17 @@ Digital Forensics is the field in cybersecurity that tries to gather and underst
 
     - Directly bundles multiple files/folders into one archive (e.g., archive.zip).
 
-2. Compression Efficiency
+2. **Compression Efficiency**:
 - .gz: Optimized for text-based files (e.g., logs, JSON, CSS) with high compression ratios.
 
 - .zip: Uses DEFLATE (default) or other algorithms (e.g., BZIP2 in .zipx), trading speed for versatility.
 
-3. Metadata & Features
+3. **Metadata & Features**:
 - .gz: Strips original filename by default (unless using gzip -N).
 
 - .zip: Stores filenames, paths, timestamps, and permissions (Unix).
 
-4. Encryption
+4. **Encryption**:
 - .gz: No built-in encryption.
 
 - .zip: Supports password protection (AES-256 in modern tools like 7-Zip).
@@ -77,33 +80,13 @@ Digital Forensics is the field in cybersecurity that tries to gather and underst
 - **Inode**: the inode layer is the bookkeeping layer of a disk image. It's like toc, with the capter number being like the inodes, and the pages like blocks of a file. (`icat` is an inode layer tool that outputs a single file based on its inode number)
 - **Filename**: the filename layer is one layer that most any user of a computer actually sees and interacts with. (Filename layer tools are prepended by 'f'. `fls` lists the files on an image starting at the root.) 
 ## Sleuthkit tools
-
+```
 $ gzip -d [filename]      //unzip .gz file
 
 $ gunzip [filename]
 
 $ mmls [disk]             //size partions
+```
 
 [Sleuthkit docs](http://wiki.sleuthkit.org/index.php?title=TSK_Tool_Overview )
-
-# Disk, disk, sleuth! II
-
-Firstly, I download the .gz file and decompress it. 
-Next, I analyze the disk image though `mmls` command to find the main partition.
-
-
-![Analyzing disk imga](./img/DDS2_analyzing.png)
-
-
-As we can see in the screenshot, 'Linux (0x83)' is the main partition and following one of tips, I visit the [Sleuthkit docs](http://wiki.sleuthkit.org/index.php?title=TSK_Tool_Overview) which explains that `fls` can list allocated and deleted file names in a directory. Thus, with the command `man` help and what I studied previously I found the path and the inode number of the doc.
-
-
-![Found file](./img/DDS2_location.png)
-
-
-In the end, we can print the file using `icat`:
-
-
-![Flag](./img/DDS2_result.png)
-
 
