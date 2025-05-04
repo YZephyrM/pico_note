@@ -4,7 +4,7 @@ After downloading the compressed disk image, I identified its file type using th
 Then I examined the disk structure using `mmls` command.
 
 
-![Partions disk image fiel](./OO_partitions.png)
+![Partions disk image fiel](./img/OO_partitions.png)
 
 
 Faced with two main partions (see screenshot), I first attempted to search for `flag.txt` 
@@ -18,7 +18,7 @@ The output revealed that the target file was located in the root dictory of the 
 ![output command](./img/OO_output.png)
 
 
-![/root](./img/00_root.png)
+![/root](./img/OO_root.png)
 
 The real challenge emerged when I realized:
 - The original `flag.txt` was reallocated.
@@ -49,7 +49,7 @@ shred -u flag.txt
 I copied the file `flag.txt.enc` in `/tmp` to work better with file and eventually I make it!!!
 
 
-![solution!!!](./img/solution.png)
+![solution!!!](./img/OO_solution.png)
 
 
 # P.S.
