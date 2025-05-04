@@ -1,6 +1,6 @@
 # Operation Orchid ([link](https://play.picoctf.org/practice/challenge/285))
 
-After downloading the compressed disk image, I identified its file type using the `file command and decompressed it.
+After downloading the compressed disk image, I identified its file type using the `files` command and decompressed it.
 Then I examined the disk structure using `mmls` command.
 
 
