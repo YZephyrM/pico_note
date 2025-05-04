@@ -92,3 +92,6 @@ $ mmls [disk]             //size partions
 
 
 [Challenge-combination-bash-comm-sleuthkit](./challenge/DDS2.md)
+
+
+[Challenge-sleuthkit-encryption](challenge/Operation_Orchid.md)
