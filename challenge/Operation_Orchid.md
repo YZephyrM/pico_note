@@ -71,7 +71,7 @@ This typically means either:
 
     - Using mismatched encryption/decryption parameters
 
-## Correction
+## Enhance 
 ```
 openssl enc -aes-256-cbc -d -salt -pbkdf2 -iter 100000 \
     -in flag.txt.enc -out flag.txt -k yourpassword 
