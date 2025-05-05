@@ -3,13 +3,13 @@
 First, I logged into the first server trying to obtain the crucial information (see problem).
 
 
-![crucial_info](./img/DYLB_info.png)
+![crucial info](./img/DYLB_info.png)
 
 
 Then, I connected to the running application, after answering some question.
 
 
-![questions](./img/DYLB_question.png)
+![questions](./img/DYLB_questions.png)
 
 
 As hints given by problem, I entered in `/root`, but I found that I didn't have permission to read `flag.txt` file.
