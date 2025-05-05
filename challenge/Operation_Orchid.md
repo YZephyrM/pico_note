@@ -26,8 +26,13 @@ The real challenge emerged when I realized:
 
 ![output `icat`](./img/OO_icat.png)
 
-After extensive troubleshooting, I discovered a critical clue by inscpecting `.ash_history` -- the shell command history of the system which was found in the same directory with the two target file (inode number: 1875).
-At the time, I wasn't fully aware of how encryption worked in this context. Digging deeper , their purpose became a bit clear:
+After a large troubleshooting, I discovered that inscpecting `.ash_history` (the shell command history of the system), which was found in the same directory with the two target file (inode number: 1875), could be the significant breakthrough.
+
+
+![breakthrough](./img/breakthrough.png)
+
+
+At the time, I wasn't fully aware of how encryption worked in this context. Digging deeper, their purpose became a bit clear:
 
 1. Encryption
 ``` bash
@@ -43,8 +48,8 @@ openssl aes256 -salt -in flag.txt -out flag.txt.enc -k unbreakblepassowerd123456
 ``` bash
 shred -u flag.txt
 ```
-- overwrote the `flag.txt` 3times
-- `-u` erased metadata so removed all traces
+- `shred` overwrites the `flag.txt` 3 times
+- `-u` erases metadata so removed all traces
 
 I copied the file `flag.txt.enc` in `/tmp` to work better with file and eventually I make it!!!
 
@@ -53,7 +58,7 @@ I copied the file `flag.txt.enc` in `/tmp` to work better with file and eventual
 
 
 # P.S.
-The warning and error occurred because the challenge is using an outdated and incure key derivation method in OpenSSL.
+The warning and error occurred because the challenge is using an outdated and insecure key derivation method in OpenSSL.
 
 - Deprecated Key Derivation 
 Older OpenSSL versions (and your command) use a weak key generation method (-k password). Modern versions warn about this because:
@@ -71,7 +76,8 @@ This typically means either:
 
     - Using mismatched encryption/decryption parameters
 
-## Enhance 
+## Possible Improvement 
+
 ```
 openssl enc -aes-256-cbc -d -salt -pbkdf2 -iter 100000 \
     -in flag.txt.enc -out flag.txt -k yourpassword 
