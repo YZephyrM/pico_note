@@ -29,7 +29,7 @@ The real challenge emerged when I realized:
 After a large troubleshooting, I discovered that inscpecting `.ash_history` (the shell command history of the system), which was found in the same directory with the two target file (inode number: 1875), could be the significant breakthrough.
 
 
-![breakthrough](./img/breakthrough.png)
+![breakthrough](./img/OO_breakthrough.png)
 
 
 At the time, I wasn't fully aware of how encryption worked in this context. Digging deeper, their purpose became a bit clear:
