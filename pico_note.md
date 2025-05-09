@@ -94,4 +94,56 @@ $ mmls [disk]             //size partions
 [Challenge-combination-bash-comm-sleuthkit](./challenge/DDS2.md)
 
 
-[Challenge-sleuthkit-encryption](challenge/Operation_Orchid.md)
+[Challenge-sleuthkit-encryption](./challenge/Operation_Orchid.md)
+
+
+# Network Layers
+
+- **Application layer**
+    - Responsible for **handling data traffic between applications**.
+
+- **Transport layer**
+    - Responsible for **providing** several **connections on the same host** (possibility to have several applicications on the same device and each of them can have a different connection even if it is just one device.
+    - **TCP** (Transport Control Protocol) and **UDP**
+    - **Assigns a port** to each connection, and that is how it tells the difference between connections in the same computer, because of the port
+
+- **Network layer**
+    - Provides with an address in the network called the **IP (Internet Protocol) address**
+    - **Routes information** through different routers.
+    - **Mapping** between all the computers connected to the internet 
+
+- **Data link layer**
+    - **Communication** between devices that are connected **directly**
+    - **MAC address** (Media Access Control), which is assigned to the hardware of your network card when it is manufactured
+
+- **Physical layer**
+    - Handle electrical pulses on the wire that represent bits
+
+
+# Web Exploits
+
+## HTML (HyperText Markup Language)
+
+`.html` extension
+
+``` html
+<b>Hello World!</b>
+```
+to make msg appear in bold
+Note: <b> is the opening tag, </b> is the closing tag
+
+[page](./picoexample/anotherPage.html)
+
+`<title></title>` tags --> title shown in tab of the browser
+`<h1></h1>` --> big heading
+`<h2></h2>` --> heading smaller than `<h1>`
+`<head></head> --> group introductory content.
+`<body></body>` --> group the main content of the page
+`<img src = "smthing.png">` --> show imgs and `src` stands for "source"
+
+``` html
+<a href="url" > Description </a>
+```
+This element to make a link to the website.
+
+[tags hmtl](https://www.w3schools.com/tags/)
